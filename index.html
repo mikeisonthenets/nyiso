@@ -1,0 +1,56 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+
+    <title>NYISO (Search)</title>
+
+    <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+
+    <script type='text/javascript' src='site/js/jquery.ba-hashchange.min.js'></script>
+
+    <script type='text/javascript' src='site/js/jquery.swiftype.search.js'></script>
+
+    <link type='text/css' rel='stylesheet' href='site/css/search.css' media='all' />
+
+    <script type='text/javascript'>
+        $(function() {
+
+            $('#search-form').submit(function(event) {
+                event.preventDefault();
+                var query = $("#st-search-input").val();  
+                window.location = "./results.html#stq=" + encodeURIComponent(query);
+            });
+
+
+
+
+            // $('.st-search-input').swiftypeSearch({
+
+            //     resultContainingElement: '#st-results-container',
+            //     engineKey: 'u9Xadyaze_awxNd4pnf_',
+            //     fetchFields: { 'page': ['title','url']}
+            // });
+
+
+
+        });
+
+    </script>
+
+</head>
+
+<body>
+
+    <form id="search-form">
+
+        <input type="text" id="st-search-input" class="st-search-input"/>
+
+    </form>
+
+    <div id="st-results-container" class="st-result-listing"></div>
+
+</body>
+
+</html>
